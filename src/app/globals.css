@@ -31,4 +31,33 @@ body {
   .btn-primary:hover {
     background: linear-gradient(96deg, #51a703 -34.09%, #e63615 124.84%);
   }
+
+  .nav-sponsor-button {
+    position: relative;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 8px; /* This will now work */
+    background: rgba(234, 112, 40, 0.05);
+    backdrop-filter: blur(25px);
+    z-index: 1;
+    overflow: hidden; /* Ensures the pseudo-element is contained within the button */
+    @apply px-3 py-2;
+  }
+
+  .nav-sponsor-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    padding: 2px;
+    background: linear-gradient(96deg, #61c604 -34.09%, #df481a 124.84%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: subtract;
+    z-index: -1;
+  }
 }
