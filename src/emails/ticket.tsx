@@ -1,4 +1,4 @@
-import { Logo } from "@/components";
+import { Logo } from "@/components/ui";
 import {
   Body,
   Html,
@@ -42,7 +42,7 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
 
               <Link
                 href={ticketUrl}
-                className="px-5 py-3 bg-[#FE3985] text-white rounded-lg font-medium mt-2 block w-fit"
+                className="px-5 py-3 bg-[#61C604] text-white rounded-lg font-medium mt-2 block w-fit"
               >
                 Check your ticket
               </Link>
@@ -52,7 +52,7 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
                 If you have any questions, feel free to contact us at{" "}
                 <Link
                   href="mailto:theseoevent@gmail.com"
-                  className="text-[#FE3985]"
+                  className="text-[#61C604]"
                 >
                   theseoevent@gmail.com
                 </Link>
