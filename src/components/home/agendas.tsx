@@ -110,7 +110,7 @@ export function Agendas() {
                 Event Day *
               </span>
               <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-gradient">
-                21 September
+                22 September
               </span>
             </div>
           </div>

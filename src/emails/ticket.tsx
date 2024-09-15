@@ -34,7 +34,7 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
               <Text className="text-base">Hi {name}</Text>
               <Text className="text-base">
                 Welcome to the SEO family! We are excited to invite you to our
-                exclusive event on September 21, 2024!
+                exclusive event on September 22, 2024!
               </Text>
               <Text className="text-base">
                 Check your event ticket link below
@@ -60,9 +60,6 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
               </Text>
               <Text className="text-sm text-gray-400 mt-2">
                 © {new Date().getFullYear()} The SEO Event. All rights reserved.
-              </Text>
-              <Text className="text-sm text-gray-400">
-                123 Event Street, Suite 456, Dhaka, Bangladesh
               </Text>
             </Section>
           </Container>
