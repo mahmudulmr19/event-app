@@ -29,9 +29,6 @@ export function Navbar() {
           ))}
         </div>
         <div className="flex items-center gap-x-2">
-          <a className="nav-sponsor-button" href="/buy-ticket">
-            Become a sponsor
-          </a>
           <a className="btn-primary" href="/get-ticket">
             Grab a ticket
           </a>
