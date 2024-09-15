@@ -34,7 +34,7 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
               <Text className="text-base">Hi {name}</Text>
               <Text className="text-base">
                 Welcome to the SEO family! We are excited to invite you to our
-                exclusive pre-launch event on June 10, 2024!
+                exclusive event on September 21, 2024!
               </Text>
               <Text className="text-base">
                 Check your event ticket link below
