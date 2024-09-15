@@ -18,19 +18,14 @@ body {
 
 @layer components {
   .text-gradient {
-    background: linear-gradient(95deg, #7dfa0a 17.93%, #ff5926 65.43%);
-    @apply bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent bg-[linear-gradient(95deg,#7dfa0a_17.93%,#ff5926_65.43%)];
   }
   .text-body {
     @apply text-base md:text-lg lg:text-xl font-medium;
   }
 
   .btn-primary {
-    background: linear-gradient(96deg, #61c604 -34.09%, #df481a 124.84%);
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2 font-semibold text-sm sm:text-base rounded-lg cursor-pointer transition-all;
-  }
-  .btn-primary:hover {
-    background: linear-gradient(96deg, #51a703 -34.09%, #e63615 124.84%);
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 font-semibold text-sm sm:text-base rounded-lg cursor-pointer transition-all bg-[linear-gradient(96deg,#61c604_-34.09%,#df481a_124.84%)] hover:bg-[linear-gradient(96deg,#51a703_-34.09%,#e63615_124.84%)];
   }
 
   .nav-sponsor-button {
