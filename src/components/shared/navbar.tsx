@@ -15,7 +15,7 @@ export function Navbar() {
   return (
     <nav className="bg-[#0b0c0e4d] py-2.5 backdrop-blur-md relative overflow-hidden">
       <Container className="flex items-center justify-between relative">
-        <div className=" absolute inset-y-0 transform left-52 blur-[50px] translate-x-1/2 w-[124px] h-[52px] bg-[#91E10E]/15" />
+        <div className=" absolute inset-y-0 transform left-52 blur-[50px] translate-x-1/2 w-[124px] h-[52px] bg-[#91E10E]/15 max-lg:hidden" />
         <Logo className="h-16" />
         <div className="flex items-center gap-x-5 max-lg:hidden  justify-center ml-60">
           {navLinks.map((link) => (
