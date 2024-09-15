@@ -32,7 +32,7 @@ export function Navbar() {
           <a className="nav-sponsor-button" href="/buy-ticket">
             Become a sponsor
           </a>
-          <a className="btn-primary" href="/buy-ticket">
+          <a className="btn-primary" href="/get-ticket">
             Grab a ticket
           </a>
         </div>
