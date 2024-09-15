@@ -2,6 +2,12 @@ import { Agendas, Banner, Hero, Speakers } from "@/components/home";
 import { Container } from "@/components/ui";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 
+export const metadata = {
+  title: "The SEO Event: Bangladesh’s #1 SEO Industry Conference",
+  description:
+    "Join SEOFest, Bangladesh's top SEO conference! Learn from industry experts, discover the latest SEO trends, and boost your skills. Perfect for beginners and pros alike!",
+};
+
 export default function Page() {
   return (
     <main className="w-full h-full">

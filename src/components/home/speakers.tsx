@@ -11,9 +11,16 @@ export function Speakers() {
   return (
     <section id="speakers" className="pb-10 md:pb-16 lg:mb-20 xl:pb-28">
       <Container>
-        <h2 className="section-title">
-          Meet Our <span className="text-gradient">Speakers</span>
-        </h2>
+        <div className="max-w-screen-sm mx-auto text-center space-y-2">
+          <h2 className="section-title">
+            The <span className="text-gradient">Top SEOs</span> and Other{" "}
+            <span className="text-gradient">tech experts</span> in the country
+          </h2>
+          <p className="text-body">
+            Meet the best in SEO and tech! Our speakers include top experts from
+            across the country. Get ready to learn from the pros!
+          </p>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4  mt-10 md:mt-14 lg:mt-16">
           {data.map((j, i) => (
             <Image

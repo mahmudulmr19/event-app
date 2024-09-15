@@ -1,8 +1,8 @@
 export function SponsoredList() {
   return (
-    <div className="mt-10 md:mt-16 lg:mt-20 xl:mt-28">
+    <div className="mt-10 md:mt-16 lg:mt-20 xl:mt-28 max-w-screen-lg mx-auto">
       <div className="section-title text-center">
-        Our <span className="text-gradient">Sponsorship</span>
+        Our <span className="text-gradient">Sponsored By </span>
       </div>
 
       <div className="grid md:grid-cols-2 mt-10 lg:mt-16 gap-8">
@@ -21,7 +21,7 @@ function TitleSponsorCard() {
     <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20">
       <div className="flex flex-col text-center items-center gap-y-5 md:gap-y-10 mx-auto">
         <div className="text-2xl md:text-3xl lg:text-4xl font-medium text-gradient">
-          Title Sponsorship
+          Platinum Sponsors
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
