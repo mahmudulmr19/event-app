@@ -97,7 +97,7 @@ export function Agendas() {
   ];
 
   return (
-    <section className="py-section pt-0" id="agenda">
+    <section className="pb-10 md:pb-16 lg:mb-20" id="agenda">
       <Container>
         <div className="flex justify-between flex-col lg:flex-row items-start lg:items-center max-lg:gap-y-3">
           <h2 className="section-title">
