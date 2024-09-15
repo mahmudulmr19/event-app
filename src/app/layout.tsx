@@ -4,12 +4,14 @@ import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const fontSans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
+const font = DM_Sans({ subsets: ["latin"] });
 
 const headingFont = localFont({
-  src: "./fonts/NeulisAlt-Bold.woff2",
+  src: [
+    { path: "./fonts/NeulisAlt-Bold.woff2", weight: "700" },
+    { path: "./fonts/NeulisAlt-Medium.woff2", weight: "500" },
+  ],
   variable: "--font-heading",
-  weight: "700",
 });
 
 export const metadata: Metadata = {
@@ -24,13 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          fontSans.variable,
-          headingFont.variable,
-          "font-sans antialiased"
-        )}
-      >
+      <body className={cn(font.className, headingFont.variable, "antialiased")}>
         {children}
       </body>
     </html>

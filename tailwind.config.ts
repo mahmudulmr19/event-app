@@ -8,7 +8,6 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      sans: ["var(--font-sans)", "sans-serif"],
       heading: ["var(--font-heading)", "sans-serif"],
     },
     extend: {},
