@@ -10,7 +10,7 @@ export function Hero() {
       <Container className="py-10 md:py-16 lg:py-20 xl:py-28 relative z-10">
         <div className="absolute bottom-[70%] left-8 size-52 max-lg:hidden bg-[#7AFF06] transform translate-y-1/2 blur-[400px] -z-[1]" />
         <div className="absolute bottom-[70%] right-8 size-52 max-lg:hidden bg-[#4EBBEB] transform translate-y-1/2 blur-[400px] -z-[1]" />
-        <div className="max-w-screen-md mx-auto flex flex-col items-center">
+        <div className="max-w-sm lg:max-w-lg xl:max-w-screen-sm w-full mx-auto flex flex-col items-center">
           <div className="flex items-center gap-x-3">
             <SpeakerIcon />
             <span className="font-heading font-medium">
@@ -21,7 +21,7 @@ export function Hero() {
             The <span className="text-gradient">SEO Fest</span> for Deshi SEOs
             by Deshi SEOs
           </h1>
-          <p className="text-body text-gray-200 mt-1.5">
+          <p className="text-body text-gray-200 mt-1.5 text-center">
             Collaborate, Learn, and Innovate together.
           </p>
 
