@@ -1,9 +1,9 @@
 "use client";
 
 import { Container, Logo } from "@/components/ui";
-import { PartyPopper, Printer } from "lucide-react";
-import { useReactToPrint } from "react-to-print";
+import { PartyPopper, Download } from "lucide-react";
 import { useRef } from "react";
+import html2canvas from "html2canvas";
 
 interface TicketProps {
   name: string;
@@ -20,9 +20,23 @@ export default function Ticket({
 }) {
   const ticketRef = useRef<HTMLDivElement>(null);
 
-  const handlePrint = useReactToPrint({
-    content: () => ticketRef.current,
-  });
+  const handleImageDownload = async () => {
+    if (!ticketRef.current) return;
+
+    try {
+      const canvas = await html2canvas(ticketRef.current);
+      const image = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = image;
+      link.download = `${name.replace(/\s+/g, "_")}_ticket.png`;
+      link.click();
+    } catch (error) {
+      console.error("Error generating ticket image:", error);
+      alert(
+        "There was an error generating the ticket image. Please try again."
+      );
+    }
+  };
 
   return (
     <div>
@@ -32,9 +46,9 @@ export default function Ticket({
           <div className="max-lg:hidden absolute inset-y-0 transform right-52 blur-[50px] opacity-15 -translate-x-1/2 w-[124px] h-[52px] bg-[#E82FAC]"></div>
           <Logo className="h-10" />
 
-          <button className="btn-primary gap-x-2" onClick={handlePrint}>
-            <Printer />
-            Print Out
+          <button className="btn-primary gap-x-2" onClick={handleImageDownload}>
+            <Download />
+            Download
           </button>
         </Container>
       </nav>
@@ -44,8 +58,75 @@ export default function Ticket({
           ref={ticketRef}
           className="max-w-screen-md mx-auto w-full overflow-hidden bg-[#151517] rounded-2xl relative "
         >
-          <div className="absolute left-0 bottom-0 bg-[#8FE114] size-24 blur-[150px]" />
-          <div className="absolute right-6 top-8 bg-[#E97227] size-24 blur-[150px]" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute left-0 bottom-0"
+            width={400}
+            height={400}
+            viewBox="0 0 400 400"
+            fill="none"
+          >
+            <g filter="url(#filter0_f_74_62)">
+              <circle cx={50} cy={350} r={50} fill="#8FE114" />
+            </g>
+            <defs>
+              <filter
+                id="filter0_f_74_62"
+                x={-300}
+                y={0}
+                width={700}
+                height={700}
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity={0} result="BackgroundImageFix" />
+                <feBlend
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation={150}
+                  result="effect1_foregroundBlur_74_62"
+                />
+              </filter>
+            </defs>
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={421}
+            height={429}
+            viewBox="0 0 421 429"
+            fill="none"
+            className="absolute right-0 top-0"
+          >
+            <g filter="url(#filter0_f_74_61)">
+              <circle cx={350} cy={79} r={50} fill="#E97227" />
+            </g>
+            <defs>
+              <filter
+                id="filter0_f_74_61"
+                x={0}
+                y={-271}
+                width={700}
+                height={700}
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity={0} result="BackgroundImageFix" />
+                <feBlend
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation={150}
+                  result="effect1_foregroundBlur_74_61"
+                />
+              </filter>
+            </defs>
+          </svg>
 
           <div className="p-6 text-white bg-[#181818] rounded-lg">
             <div className="flex flex-col items-center">
