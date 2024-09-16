@@ -7,12 +7,6 @@ export function Banner() {
         <div className="section-title max-w-2xl text-center">
           Tickets are selling fast, grab now before we run out!
         </div>
-        <a
-          href="/get-ticket"
-          className="px-4 py-2 rounded-lg bg-white border border-white backdrop-blur-2xl "
-        >
-          <span className="text-gradient font-semibold">Grab a ticket</span>
-        </a>
       </div>
     </Container>
   );

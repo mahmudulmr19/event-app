@@ -6,6 +6,6 @@ if (!process.env.SSL_STORE_ID || !process.env.SSL_SECRET_KEY) {
 
 const storeId = process.env.SSL_STORE_ID;
 const storePassword = process.env.SSL_SECRET_KEY;
-const live = false;
+const live = process.env.NODE_ENV === "production";
 
 export const sslcommerz = new SslCommerzPayment(storeId, storePassword, live);

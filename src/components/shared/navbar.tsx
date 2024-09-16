@@ -28,11 +28,11 @@ export function Navbar() {
             </a>
           ))}
         </div>
-        <div className="flex items-center gap-x-2">
+        {/* <div className="flex items-center gap-x-2">
           <a className="btn-primary" href="/get-ticket">
             Grab a ticket
           </a>
-        </div>
+        </div> */}
       </Container>
     </nav>
   );

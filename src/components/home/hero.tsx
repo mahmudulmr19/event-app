@@ -24,10 +24,6 @@ export function Hero() {
           <p className="text-body text-gray-200 mt-1.5 text-center">
             Collaborate, Learn, and Innovate together.
           </p>
-
-          <a href="/get-ticket" className="btn-primary mt-5 md:mt-7 lg:mt-8">
-            Grab a ticket
-          </a>
         </div>
         <SponsoredList />
       </Container>

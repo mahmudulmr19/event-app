@@ -31,11 +31,6 @@ export function Speakers() {
             />
           ))}
         </div>
-        <div className="flex items-center justify-center mt-10">
-          <a href="/get-ticket" className="btn-primary">
-            Grab a ticket
-          </a>
-        </div>
       </Container>
     </section>
   );
