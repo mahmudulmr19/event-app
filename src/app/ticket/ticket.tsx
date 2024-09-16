@@ -2,7 +2,7 @@
 
 import { Container, Logo } from "@/components/ui";
 import { PartyPopper, Download } from "lucide-react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import html2canvas from "html2canvas";
 
 interface TicketProps {
@@ -21,9 +21,16 @@ export default function Ticket({
   const ticketRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [qrCodeLoaded, setQrCodeLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => setQrCodeLoaded(true);
+    img.src = qrCode;
+  }, [qrCode]);
 
   const handleImageDownload = async () => {
-    if (!ticketRef.current) return;
+    if (!ticketRef.current || !qrCodeLoaded) return;
 
     setIsLoading(true);
     setProgress(0);
@@ -35,7 +42,19 @@ export default function Ticket({
         await new Promise((resolve) => setTimeout(resolve, 20));
       }
 
-      const canvas = await html2canvas(ticketRef.current);
+      const canvas = await html2canvas(ticketRef.current, {
+        useCORS: true,
+        logging: true,
+        onclone: (document) => {
+          const qrCodeImg = document.querySelector(
+            "#qr-code"
+          ) as HTMLImageElement;
+          if (qrCodeImg) {
+            qrCodeImg.style.width = "100px";
+            qrCodeImg.style.height = "100px";
+          }
+        },
+      });
       const image = canvas.toDataURL("image/png");
 
       // Simulate progress for download preparation (remaining 50%)
@@ -198,7 +217,9 @@ export default function Ticket({
                     <label className="text-gray-400 mb-0.5 font-medium text-base">
                       Email
                     </label>
-                    <p className="text-lg font-medium text-gray-200">{email}</p>
+                    <p className="text-lg font-medium text-gray-200 ">
+                      {email}
+                    </p>
                   </div>
                   <div>
                     <label className="text-gray-400 mb-0.5 font-medium text-base">
@@ -215,17 +236,19 @@ export default function Ticket({
                     </p>
                   </div>
                 </div>
-                <div>
-                  <label className="text-gray-400 mb-1 font-medium text-base">
+                <div className="space-y-2">
+                  <label className="text-gray-400  font-medium text-base">
                     QR Code
                   </label>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  {/* eslint-disable-next-line @next/next/no-img-element, */}
                   <img
+                    id="qr-code"
                     src={qrCode}
                     alt="QR Code"
                     width={100}
                     height={100}
                     className="bg-white p-1 rounded"
+                    crossOrigin="anonymous"
                   />
                 </div>
               </div>
