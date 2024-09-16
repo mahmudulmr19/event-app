@@ -1,4 +1,3 @@
-import { Logo } from "@/components/ui";
 import {
   Body,
   Html,
@@ -9,6 +8,7 @@ import {
   Heading,
   Link,
   Text,
+  Img,
 } from "@react-email/components";
 
 interface TicketEmailProps {
@@ -24,7 +24,10 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
         <Body className="bg-black my-auto mx-auto font-sans px-2 text-white">
           <Container className="max-w-screen-sm w-full mx-auto py-8 px-10 bg-[#050505] rounded-lg my-10">
             <Section className="text-center">
-              <Logo className="h-16" />
+              <Img
+                src="https://res.cloudinary.com/dauydl3ih/image/upload/w_500/v1726485827/i78rwhfgqzafykdsny8i.png"
+                className="h-16 mx-auto"
+              />
               <Heading className="text-3xl font-bold">
                 Welcome to The SEO Event
               </Heading>
