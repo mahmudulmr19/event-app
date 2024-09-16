@@ -49,7 +49,7 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
                 <br />
                 Date: 22nd September 2024
                 <br />
-                Time: 11 AM to 7 PM
+                Time: 9 AM to 7 PM
                 <br />
                 Venue: The Attention Network
               </Text>
