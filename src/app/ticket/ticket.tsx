@@ -217,9 +217,7 @@ export default function Ticket({
                     <label className="text-gray-400 mb-0.5 font-medium text-base">
                       Email
                     </label>
-                    <p className="text-lg font-medium text-gray-200 ">
-                      {email}
-                    </p>
+                    <p className="text-lg font-medium text-gray-200">{email}</p>
                   </div>
                   <div>
                     <label className="text-gray-400 mb-0.5 font-medium text-base">
