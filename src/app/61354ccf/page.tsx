@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { ArrowLeft } from "lucide-react";
 import { Container, Logo } from "@/components/ui";
 import axios from "axios";
 
@@ -56,13 +55,6 @@ export default function BuyTicketPage() {
         <Container className="flex items-center justify-between relative">
           <div className=" absolute inset-y-0 transform left-52 blur-[50px] translate-x-1/2 w-[124px] h-[52px] bg-[#91E10E]/15" />
           <Logo className="h-16" />
-          <a
-            href="/"
-            className="text-white flex items-center text-sm font-medium"
-          >
-            <ArrowLeft className="mr-1 h-4 w-4" />
-            Back to Homepage
-          </a>
         </Container>
       </nav>
       <Container className="h-full flex justify-center flex-col py-10 md:py-16 lg:py-20 xl:py-28">
@@ -72,7 +64,7 @@ export default function BuyTicketPage() {
 
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
             Fill the information & buy a ticket for the event.{" "}
-            <span className="text-gradient">(Ticket Price BDT 1000)</span>
+            <span className="text-gradient">(Ticket Price BDT 1500)</span>
           </h1>
 
           {error && <p className="text-red-500 text-center">{error}</p>}
