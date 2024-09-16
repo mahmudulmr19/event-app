@@ -81,6 +81,16 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
               <Text className="text-sm text-gray-400 mt-2">
                 © {new Date().getFullYear()} The SEO Event. All rights reserved.
               </Text>
+
+              {/* Add the powered by section here */}
+              <Section className="mt-6">
+                <Heading className="text-xl text-gray-400">Powered by</Heading>
+                <Img
+                  src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726502245/Layer_1_uglflk.png"
+                  alt="Powered by"
+                  className="w-48 mx-auto mt-2"
+                />
+              </Section>
             </Section>
           </Container>
         </Body>

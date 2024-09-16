@@ -148,7 +148,7 @@ export default function BuyTicketPage() {
             <div className="flex flex-col gap-y-1">
               <label className="font-medium text-base md:text-lg">
                 Passport Size Photo{" "}
-                <small className="text-gray-200">45 mm x 55 mm </small>
+                <small className="text-gray-200">(45 mm x 55 mm) </small>
               </label>
               <CldUploadWidget
                 uploadPreset="theseoevent"
