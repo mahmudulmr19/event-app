@@ -2,7 +2,7 @@
 
 import { Container, Logo } from "@/components/ui";
 import { PartyPopper, Download } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import html2canvas from "html2canvas";
 
 interface TicketProps {
@@ -19,22 +19,48 @@ export default function Ticket({
   ticket: TicketProps;
 }) {
   const ticketRef = useRef<HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const handleImageDownload = async () => {
     if (!ticketRef.current) return;
 
+    setIsLoading(true);
+    setProgress(0);
+
     try {
+      // Simulate progress for image generation (50% of total progress)
+      for (let i = 0; i <= 50; i++) {
+        setProgress(i);
+        await new Promise((resolve) => setTimeout(resolve, 20));
+      }
+
       const canvas = await html2canvas(ticketRef.current);
       const image = canvas.toDataURL("image/png");
+
+      // Simulate progress for download preparation (remaining 50%)
+      for (let i = 51; i <= 99; i++) {
+        setProgress(i);
+        await new Promise((resolve) => setTimeout(resolve, 20));
+      }
+
       const link = document.createElement("a");
       link.href = image;
       link.download = `${name.replace(/\s+/g, "_")}_ticket.png`;
       link.click();
+
+      setProgress(100);
+      setTimeout(() => {
+        setIsLoading(false);
+        setProgress(0);
+      }, 500);
     } catch (error) {
       console.error("Error generating ticket image:", error);
       alert(
         "There was an error generating the ticket image. Please try again."
       );
+      setIsLoading(false);
+      setProgress(0);
     }
   };
 
@@ -42,14 +68,30 @@ export default function Ticket({
     <div>
       <nav className="bg-[#0b0c0e4d] py-2.5 backdrop-blur-md relative overflow-hidden">
         <Container className="flex items-center justify-between relative">
-          <div className="max-lg:hidden absolute inset-y-0 transform left-52 blur-[50px] opacity-15 translate-x-1/2 w-[124px] h-[52px] bg-[#3BCDF3]"></div>
-          <div className="max-lg:hidden absolute inset-y-0 transform right-52 blur-[50px] opacity-15 -translate-x-1/2 w-[124px] h-[52px] bg-[#E82FAC]"></div>
+          <div className="max-lg:hidden absolute inset-y-0 transform left-52 blur-[50px] opacity-15 translate-x-1/2 w-[124px] h-[52px] bg-[#8FE114]"></div>
+          <div className="max-lg:hidden absolute inset-y-0 transform right-52 blur-[50px] opacity-15 -translate-x-1/2 w-[124px] h-[52px] bg-[#E97227]"></div>
           <Logo className="h-10" />
 
-          <button className="btn-primary gap-x-2" onClick={handleImageDownload}>
-            <Download />
-            Download
-          </button>
+          <div className="relative">
+            <button
+              className={`btn-primary gap-x-2 ${
+                isLoading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              onClick={handleImageDownload}
+              disabled={isLoading}
+            >
+              <Download />
+              {isLoading ? "Generating..." : "Download"}
+            </button>
+            {isLoading && (
+              <div className="absolute left-0 bottom-0 w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-[#3BCDF3] transition-all duration-300 ease-out"
+                  style={{ width: `${progress}%` }}
+                ></div>
+              </div>
+            )}
+          </div>
         </Container>
       </nav>
 
