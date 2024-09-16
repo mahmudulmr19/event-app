@@ -1,8 +1,7 @@
 "use client";
-
+import { useRef, useState, useEffect } from "react";
 import { Container, Logo } from "@/components/ui";
 import { PartyPopper, Download } from "lucide-react";
-import { useRef, useState, useEffect } from "react";
 import html2canvas from "html2canvas";
 
 interface TicketProps {
@@ -238,7 +237,6 @@ export default function Ticket({
                   <label className="text-gray-400  font-medium text-base">
                     QR Code
                   </label>
-                  {/* eslint-disable-next-line @next/next/no-img-element, */}
                   <img
                     id="qr-code"
                     src={qrCode}
@@ -250,6 +248,17 @@ export default function Ticket({
                   />
                 </div>
               </div>
+            </div>
+
+            <div className="mt-6 flex justify-center items-center">
+              <div className="text-gray-400 text-sm mr-2 my-auto">
+                Powered by
+              </div>
+              <img
+                src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726502245/Layer_1_uglflk.png"
+                alt="Powered by logo"
+                className="h-6 my-auto"
+              />
             </div>
           </div>
         </div>
