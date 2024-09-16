@@ -13,6 +13,7 @@ model Ticket {
   email      String       @unique
   tran_id    String       @unique
   phone      String
+  photoURL   String?
   tshirtSize TshirtSize
   status     TicketStatus @default(pending)
   createdAt  DateTime     @default(now())

@@ -11,6 +11,7 @@ const ticketSchema = z.object({
   tshirtSize: z.enum(["S", "M", "L", "XL", "XXL", "XXXL"], {
     required_error: "T-shirt size is required",
   }),
+  photoURL: z.string({ required_error: "Photo URL is required" }).url(),
 });
 
 export async function POST(req: Request) {

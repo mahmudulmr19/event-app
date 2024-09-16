@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Container, Logo } from "@/components/ui";
+import { CldUploadWidget } from "next-cloudinary";
 import axios from "axios";
 
 export default function BuyTicketPage() {
@@ -9,9 +10,11 @@ export default function BuyTicketPage() {
     email: "",
     phone: "",
     tshirtSize: "",
+    photoURL: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -20,18 +23,21 @@ export default function BuyTicketPage() {
 
   // Simple form validation
   const isFormValid = () => {
-    const { name, email, phone, tshirtSize } = formData;
-    return name && email && phone && tshirtSize;
+    const { name, email, phone, tshirtSize, photoURL } = formData;
+    return name && email && phone && tshirtSize && photoURL;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
+    if (!formData.photoURL) {
+      setError("Please upload a photo");
+    }
+
     // Validate the form
     if (!isFormValid()) {
-      setError("Please fill out all fields and select a T-shirt size.");
-      return;
+      setError("Please fill out all fields and select a T-shirt size");
     }
 
     try {
@@ -137,6 +143,49 @@ export default function BuyTicketPage() {
                   </label>
                 ))}
               </div>
+            </div>
+
+            <div className="flex flex-col gap-y-1">
+              <label className="font-medium text-base md:text-lg">
+                Passport Size Photo{" "}
+                <small className="text-gray-200">45 mm x 55 mm </small>
+              </label>
+              <CldUploadWidget
+                uploadPreset="theseoevent"
+                onError={() => setUploadError("An error occurred")}
+                onSuccess={(result, widget) => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    // eslint-disable-next-line
+                    // @ts-ignore
+                    photoURL: result.info.url,
+                  }));
+                  widget.close();
+                }}
+              >
+                {({ open }) => {
+                  return (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        open();
+                      }}
+                      className="bg-[#1b1b1e] border border-[#313137] text-white py-2 px-4 rounded-xl hover:bg-[#2a2a2e] transition-colors"
+                    >
+                      {formData.photoURL ? "Change Photo" : "Upload Photo"}
+                    </button>
+                  );
+                }}
+              </CldUploadWidget>
+              {uploadError && (
+                <p className="text-red-500 mt-2">{uploadError}</p>
+              )}
+              {formData.photoURL && (
+                <p className="text-green-500 mt-2">
+                  Photo uploaded successfully!
+                </p>
+              )}
             </div>
 
             <div className="flex justify-end !mt-10">
