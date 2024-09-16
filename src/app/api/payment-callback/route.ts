@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
     await mailer.sendMail({
       from: process.env.NODEMAILER_EMAIL,
       to: ticket.email,
-      subject: "Your ticket for The SEO Event",
+      subject: "Your Ticket to The SEO Event - Beyond the Algorithm",
       html: await render(TicketEmail({ name: ticket.name, ticketUrl })),
     });
 

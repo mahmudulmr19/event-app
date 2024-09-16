@@ -24,29 +24,46 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
         <Body className="bg-black my-auto mx-auto font-sans px-2 text-white">
           <Container className="max-w-screen-sm w-full mx-auto py-8 px-10 bg-[#050505] rounded-lg my-10">
             <Section className="text-center">
-              <Logo className="h-10" />
+              <Logo className="h-16" />
               <Heading className="text-3xl font-bold">
                 Welcome to The SEO Event
               </Heading>
             </Section>
 
             <Section className="mt-10">
-              <Text className="text-base">Hi {name}</Text>
+              <Text className="text-base">Hi {name ? name : "there"},</Text>
               <Text className="text-base">
-                Welcome to the SEO family! We are excited to invite you to our
-                exclusive event on September 22, 2024!
+                Thank you for purchasing your ticket to The SEO Event!
+                We&apos;re thrilled to have you join us.
               </Text>
               <Text className="text-base">
-                Check your event ticket link below
+                Get ready to dive deep into the latest trends, strategies, and
+                insights. Plus, it&apos;s a fantastic opportunity to network
+                with industry experts and fellow enthusiasts.
+              </Text>
+              <Text className="text-base mt-4">
+                <strong>Event Details:</strong>
+                <br />
+                Date: 22nd September 2024
+                <br />
+                Time: 11 AM to 7 PM
+                <br />
+                Venue: The Attention Network
+              </Text>
+              <Text className="text-base mt-4">
+                Keep an eye on your inbox for more updates as we get closer to
+                the event. If you have any questions in the meantime, feel free
+                to reach out to us.
               </Text>
 
               <Link
                 href={ticketUrl}
-                className="px-5 py-3 bg-[#61C604] text-white rounded-lg font-medium mt-2 block w-fit"
+                className="px-5 py-3 bg-[#61C604] text-white rounded-lg font-medium mt-4 block w-fit"
               >
                 Check your ticket
               </Link>
             </Section>
+
             <Section className="mt-10 text-center">
               <Text className="text-sm text-gray-400">
                 If you have any questions, feel free to contact us at{" "}
