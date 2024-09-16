@@ -9,4 +9,4 @@ export const db = globalForPrisma.prisma ?? new PrismaClient();
 
 if (env.NODE_ENV !== "production") globalForPrisma.prisma = db;
 
-export const TicketPrice = 1000;
+export const TicketPrice = 1500;
