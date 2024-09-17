@@ -192,16 +192,16 @@ export default function BuyTicketPage() {
             <div className="flex justify-between !mt-10 items-end">
               <div>
                 <h2 className="text-base md:text-lg font-medium">
-                  Proud Sponsor
+                  Proud Sponsors
                 </h2>
 
                 <div className="mt-1 flex items-end gap-x-5 flex-wrap">
-                  <ExonHostLogo className="h-6" />
+                  <ExonHostLogo className="h-4" />
                   {/* eslint-disable */}
                   <img
                     src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726559435/Group_2_1_nq5e77.png"
                     alt=""
-                    className="h-8"
+                    className="h-5"
                   />
                 </div>
               </div>

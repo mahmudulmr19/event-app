@@ -23,10 +23,10 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
       <Tailwind>
         <Body className="bg-black my-auto mx-auto font-sans px-2 text-white">
           <Container className="max-w-screen-sm w-full mx-auto py-8 px-10 bg-[#050505] rounded-lg my-10">
-            <Section className="text-center">
+            <Section>
               <Img
-                src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726547826/Group_2_pdlzwv.png"
-                className="h-20 mx-auto"
+                src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726546913/Group_4_xc3shr.png"
+                className="h-20"
               />
               <Heading className="text-3xl font-bold">
                 Welcome to The SEO Event

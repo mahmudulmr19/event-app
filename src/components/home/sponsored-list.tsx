@@ -4,7 +4,7 @@ export function SponsoredList() {
   return (
     <div className="mt-10 md:mt-16 lg:mt-20 xl:mt-28 max-w-screen-lg mx-auto">
       <div className="section-title text-center">
-        Our <span className="text-gradient">Sponsored By </span>
+        <span className="text-gradient">Sponsored By </span>
       </div>
 
       <div className="grid md:grid-cols-2 mt-10 lg:mt-16 gap-8">
@@ -23,7 +23,7 @@ function TitleSponsorCard() {
     <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20">
       <div className="flex flex-col text-center items-center gap-y-5 md:gap-y-10 mx-auto">
         <div className="text-2xl md:text-3xl lg:text-4xl font-medium text-gradient">
-          Platinum Sponsors
+          Platinum Sponsor
         </div>
         <svg
           className="w-56"
@@ -66,7 +66,7 @@ function GoldSponsorCard() {
     <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20">
       <div className="flex flex-col text-center items-center gap-y-5 md:gap-y-10 mx-auto">
         <div className="text-2xl md:text-3xl lg:text-4xl font-medium bg-[linear-gradient(90deg,#FFB325_0%,#FFF8E7_100%)] bg-clip-text  text-transparent">
-          Gold Sponsorship
+          Gold Sponsor
         </div>
         <ExonHostLogo className="w-56" />
       </div>
@@ -80,7 +80,7 @@ function SilverSponsorCard() {
     <div className="md:col-span-2 rounded-2xl bg-[#151517] relative overflow-hidden py-20">
       <div className="flex flex-col text-center items-center gap-y-5 md:gap-y-10 mx-auto">
         <div className="text-2xl md:text-3xl lg:text-4xl font-medium bg-[linear-gradient(90deg,#FFF_35.25%,#A0A0A0_65.81%)] bg-clip-text  text-transparent">
-          Silver Sponsorship
+          Silver Sponsor
         </div>
 
         <div className="flex flex-wrap justify-center gap-5 md:gap-10 lg:gap-12">
