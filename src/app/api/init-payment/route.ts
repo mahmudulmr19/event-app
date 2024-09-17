@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     ]);
 
     // Step 2: Check if the ticket sales limit has been reached
-    if (soldTicketsCount >= 144) {
+    if (soldTicketsCount >= 150) {
       return new Response(
         "Ticket sales limit reached. No more tickets available.",
         { status: 400 }
