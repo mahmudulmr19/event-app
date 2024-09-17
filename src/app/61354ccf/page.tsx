@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Container, Logo } from "@/components/ui";
 import { CldUploadWidget } from "next-cloudinary";
 import axios from "axios";
+import { ExonHostLogo } from "@/components/home/logos";
 
 export default function BuyTicketPage() {
   const [formData, setFormData] = useState({
@@ -188,10 +189,25 @@ export default function BuyTicketPage() {
               )}
             </div>
 
-            <div className="flex justify-end !mt-10">
+            <div className="flex justify-between !mt-10 items-end">
+              <div>
+                <h2 className="text-base md:text-lg font-medium">
+                  Proud Sponsor
+                </h2>
+
+                <div className="mt-1 flex items-end gap-x-5 flex-wrap">
+                  <ExonHostLogo className="h-6" />
+                  {/* eslint-disable */}
+                  <img
+                    src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726559435/Group_2_1_nq5e77.png"
+                    alt=""
+                    className="h-8"
+                  />
+                </div>
+              </div>
               <button
                 type="submit"
-                className="btn-primary"
+                className="btn-primary h-fit"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Processing..." : "Proceed to Payment"}
