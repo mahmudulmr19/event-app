@@ -25,8 +25,8 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
           <Container className="max-w-screen-sm w-full mx-auto py-8 px-10 bg-[#050505] rounded-lg my-10">
             <Section className="text-center">
               <Img
-                src="https://res.cloudinary.com/dauydl3ih/image/upload/w_500/v1726485827/i78rwhfgqzafykdsny8i.png"
-                className="h-16 mx-auto"
+                src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726546913/Group_4_xc3shr.png"
+                className="h-20 mx-auto"
               />
               <Heading className="text-3xl font-bold">
                 Welcome to The SEO Event
@@ -81,16 +81,6 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
               <Text className="text-sm text-gray-400 mt-2">
                 © {new Date().getFullYear()} The SEO Event. All rights reserved.
               </Text>
-
-              {/* Add the powered by section here */}
-              <Section className="mt-6">
-                <Heading className="text-xl text-gray-400">Powered by</Heading>
-                <Img
-                  src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726502245/Layer_1_uglflk.png"
-                  alt="Powered by"
-                  className="w-48 mx-auto mt-2"
-                />
-              </Section>
             </Section>
           </Container>
         </Body>
