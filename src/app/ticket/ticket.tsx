@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
 import { Container, Logo } from "@/components/ui";
-import { PartyPopper, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import html2canvas from "html2canvas";
 
 interface TicketProps {
@@ -189,14 +189,16 @@ export default function Ticket({
           </svg>
 
           <div className="p-6 text-white bg-[#181818] rounded-lg">
-            <div className="flex flex-col items-center">
-              <PartyPopper className="text-yellow-400" size={44} />
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mt-5 mb-1">
-                Congratulations!
-              </h2>
-              <p className="p font-medium">
-                You&apos;ve successfully purchased your ticket
-              </p>
+            <div className="mt-6 flex justify-center items-end">
+              <Logo className="h-16" />
+              <div className="flex flex-col">
+                <div className="text-gray-400 text-sm my-auto">Powered by</div>
+                <img
+                  src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726502245/Layer_1_uglflk.png"
+                  alt="Powered by logo"
+                  className="h-4 my-auto"
+                />
+              </div>
             </div>
 
             <div className="mt-10">
@@ -248,17 +250,6 @@ export default function Ticket({
                   />
                 </div>
               </div>
-            </div>
-
-            <div className="mt-6 flex justify-center items-center">
-              <div className="text-gray-400 text-sm mr-2 my-auto">
-                Powered by
-              </div>
-              <img
-                src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726502245/Layer_1_uglflk.png"
-                alt="Powered by logo"
-                className="h-6 my-auto"
-              />
             </div>
           </div>
         </div>
