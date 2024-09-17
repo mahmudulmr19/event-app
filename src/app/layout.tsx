@@ -17,6 +17,9 @@ const headingFont = localFont({
 export const metadata: Metadata = {
   title: "Theo SEO Event",
   icons: [{ url: "/favicon.png" }],
+  verification: {
+    google: "pXTLSSJjcflnvaRvFObF-nF8Fp_OmCUj0us6g1SO8a0",
+  },
 };
 
 export default function RootLayout({
