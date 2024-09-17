@@ -53,45 +53,60 @@ const AgendaItem = ({
 export function Agendas() {
   const agendas = [
     {
-      time: "7:00 PM - 7:30 PM",
+      time: "9:00 AM - 10:00 AM",
+      title: "Gate Open",
+      location: "Main Hall",
+    },
+    {
+      time: "10:00 AM - 11:00 AM",
       title: "Agency SEO & Team Development",
       speaker: "Masum Billah Bhuiyan",
       location: "Main Hall",
     },
     {
-      time: "7:30 PM - 8:00 PM",
+      time: "11:00 AM - 12:00 PM",
       title: "International SEO and hreflang tags",
       speaker: "Jinnat Ul Hasan",
       location: "Main Hall",
     },
     {
-      time: "8:00 PM - 8:30 PM",
+      time: "12:00 PM - 1:00 PM",
       title: "Local SEO & B2B Networking",
       speaker: "MD Abdullah Jubayer",
       location: "Main Hall",
     },
     {
-      time: "8:30 PM - 9:00 PM",
+      time: "1:00 PM - 2:00 PM",
+      title: "Lunch Break",
+      location: "Dining Area",
+    },
+    {
+      time: "2:00 PM - 3:00 PM",
       title: "Smart SEO Automation",
       speaker: "Abdul Aouwal",
       location: "Main Hall",
     },
     {
-      time: "9:00 PM - 9:30 PM",
-      title: "Comming Soon",
+      time: "3:00 PM - 4:00 PM",
+      title: "Coming Soon",
       speaker: "Taposh Ghosh",
       location: "Main Hall",
     },
     {
-      time: "9:30 PM - 10:00 PM",
-      title: "Comming Soon",
+      time: "4:00 PM - 5:00 PM",
+      title: "Coming Soon",
       speaker: "Sheikh Shadi Shuvo",
       location: "Main Hall",
     },
     {
-      time: "10:00 PM - 11:00 PM",
-      title: "Comming Soon",
+      time: "5:00 PM - 6:00 PM",
+      title: "Coming Soon",
       speaker: "Mohammad Sujan Sarkar",
+      location: "Main Hall",
+    },
+    {
+      time: "6:00 PM - 7:00 PM",
+      title: "Closing Remarks & Networking",
       location: "Main Hall",
     },
   ];
