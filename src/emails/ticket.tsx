@@ -25,7 +25,7 @@ export default function TicketEmail({ name, ticketUrl }: TicketEmailProps) {
           <Container className="max-w-screen-sm w-full mx-auto py-8 px-10 bg-[#050505] rounded-lg my-10">
             <Section className="text-center">
               <Img
-                src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726546913/Group_4_xc3shr.png"
+                src="https://res.cloudinary.com/dauydl3ih/image/upload/v1726547826/Group_2_pdlzwv.png"
                 className="h-20 mx-auto"
               />
               <Heading className="text-3xl font-bold">
