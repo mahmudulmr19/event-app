@@ -72,7 +72,7 @@ export function Agendas() {
     {
       time: "12:00 PM - 1:00 PM",
       title: "Local SEO & B2B Networking",
-      speaker: "MD Abdullah Jubayer",
+      speaker: "Abd Raaz",
       location: "Main Hall",
     },
     {
