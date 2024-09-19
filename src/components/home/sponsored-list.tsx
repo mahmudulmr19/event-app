@@ -20,7 +20,7 @@ export function SponsoredList() {
 
 function TitleSponsorCard() {
   return (
-    <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20">
+    <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20 md:col-span-2">
       <div className="flex flex-col text-center items-center gap-y-5 md:gap-y-10 mx-auto">
         <div className="text-2xl md:text-3xl lg:text-4xl font-medium text-gradient">
           Platinum Sponsor
@@ -63,7 +63,7 @@ function TitleSponsorCard() {
 
 function GoldSponsorCard() {
   return (
-    <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20">
+    <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20 flex flex-col items-center justify-center">
       <div className="flex flex-col text-center items-center gap-y-5 md:gap-y-10 mx-auto">
         <div className="text-2xl md:text-3xl lg:text-4xl font-medium bg-[linear-gradient(90deg,#FFB325_0%,#FFF8E7_100%)] bg-clip-text  text-transparent">
           Gold Sponsor
@@ -77,7 +77,7 @@ function GoldSponsorCard() {
 
 function SilverSponsorCard() {
   return (
-    <div className="md:col-span-2 rounded-2xl bg-[#151517] relative overflow-hidden py-20">
+    <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20">
       <div className="flex flex-col text-center items-center gap-y-5 md:gap-y-10 mx-auto">
         <div className="text-2xl md:text-3xl lg:text-4xl font-medium bg-[linear-gradient(90deg,#FFF_35.25%,#A0A0A0_65.81%)] bg-clip-text  text-transparent">
           Silver Sponsor
