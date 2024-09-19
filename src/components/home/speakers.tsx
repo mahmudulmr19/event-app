@@ -4,11 +4,11 @@ import sp2 from "./speakers/Frame 82.png";
 import sp3 from "./speakers/Frame 80.png";
 import sp4 from "./speakers/Frame 81.png";
 import sp5 from "./speakers/d1.png";
-import sp6 from "./speakers/d2.png";
+import sp6 from "./speakers/shadi.png";
 import sp7 from "./speakers/d3.png";
 import Image from "next/image";
 
-const data = [sp1, sp2, sp3, sp4, sp5, sp6, sp7];
+const data = [sp1, sp2, sp3, sp4, sp7, sp5, sp6];
 
 export function Speakers() {
   return (
