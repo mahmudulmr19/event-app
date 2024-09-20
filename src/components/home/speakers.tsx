@@ -1,14 +1,14 @@
 import { Container } from "@/components/ui";
-import sp1 from "./speakers/Frame 74.png";
-import sp2 from "./speakers/Frame 82.png";
-import sp3 from "./speakers/Frame 80.png";
-import sp4 from "./speakers/Frame 81.png";
-import sp5 from "./speakers/d1.png";
-import sp6 from "./speakers/shadi.png";
-import sp7 from "./speakers/d3.png";
 import Image from "next/image";
+import s1 from "./speakers/1.png";
+import s2 from "./speakers/2.png";
+import s3 from "./speakers/3.png";
+import s4 from "./speakers/4.png";
+import s5 from "./speakers/5.png";
+import s6 from "./speakers/6.png";
+import s7 from "./speakers/7.png";
 
-const data = [sp1, sp2, sp3, sp4, sp7, sp5, sp6];
+const data = [s1, s2, s3, s4, s5, s6, s7];
 
 export function Speakers() {
   return (

@@ -121,7 +121,7 @@ export function Agendas() {
     },
     {
       time: "6:30 PM - 7:30 PM",
-      title: "Coming Soon",
+      title: "How Digital PR Can Supercharge Your SEO Goals",
       speaker: "Mohammad Sujan Sarkar",
       location: "Main Hall",
     },
