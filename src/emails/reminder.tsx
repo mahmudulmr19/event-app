@@ -11,11 +11,7 @@ import {
   Img,
 } from "@react-email/components";
 
-interface ReminderEmailProps {
-  attendeeName?: string;
-}
-
-export default function ReminderEmail({ attendeeName }: ReminderEmailProps) {
+export default function ReminderEmail() {
   return (
     <Html>
       <Head />
@@ -34,9 +30,7 @@ export default function ReminderEmail({ attendeeName }: ReminderEmailProps) {
               <Text className="text-xl font-bold text-[#7aff06] mb-4">
                 Event Reminder: The SEO Event is Tomorrow!
               </Text>
-              <Text className="text-lg text-white mb-4">
-                Dear {attendeeName || "Attendee"},
-              </Text>
+              <Text className="text-lg text-white mb-4">Dear Attendee</Text>
               <Text className="text-base text-white leading-relaxed">
                 We&apos;re excited to remind you that The SEO Event is happening
                 tomorrow! As you prepare to join us for a day of learning and

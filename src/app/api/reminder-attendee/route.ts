@@ -3,7 +3,7 @@ import { mailer } from "@/lib/mailer";
 import { render } from "@react-email/components";
 import ReminderEmail from "@/emails/reminder";
 
-export default async function POST() {
+export async function POST() {
   try {
     // Fetch attendees with successful status
     const attendees = await db.ticket.findMany({
@@ -18,54 +18,24 @@ export default async function POST() {
       return new Response("No attendees found", { status: 204 });
     }
 
-    const batchSize = 10;
+    const batchSize = 100;
+
+    // Loop through the attendees in batches
     for (let i = 0; i < attendees.length; i += batchSize) {
       const batch = attendees.slice(i, i + batchSize);
+      const bccEmails = batch.map((attendee) => attendee.email);
 
-      // Create email sending promises for the current batch
-      const emailPromises = batch.map(async (attendee) => {
-        try {
-          const htmlContent = await render(
-            ReminderEmail({ attendeeName: attendee.name })
-          );
-
-          // Send email using Nodemailer
-          await mailer.sendMail({
-            from: process.env.NODEMAILER_EMAIL,
-            to: attendee.email,
-            subject: "Final Reminder: The SEO Event – Tomorrow at 9:00 AM!",
-            html: htmlContent,
-          });
-          console.log(`Email sent to ${attendee.email}`);
-        } catch (emailError) {
-          console.error(
-            `Failed to send email to ${attendee.email}:`,
-            emailError
-          );
-        }
+      await mailer.sendMail({
+        from: process.env.NODEMAILER_EMAIL,
+        bcc: bccEmails,
+        subject: "Final Reminder: The SEO Event – Tomorrow at 9:00 AM!",
+        html: await render(ReminderEmail()),
       });
 
-      // Wait for all emails in the current batch to be sent
-      const results = await Promise.allSettled(emailPromises);
+      console.log(`Batch ${Math.floor(i / batchSize) + 1} sent successfully`);
 
-      // Log results for the current batch
-      results.forEach((result, index) => {
-        if (result.status === "rejected") {
-          console.error(
-            `Batch ${Math.floor(i / batchSize) + 1}, Email ${
-              index + 1
-            } failed:`,
-            result.reason
-          );
-        }
-      });
-
-      console.log(
-        `Batch ${Math.floor(i / batchSize) + 1} processed successfully`
-      );
-
-      // Add a delay between batches (10 seconds) to prevent Gmail rate-limiting
-      await new Promise((resolve) => setTimeout(resolve, 10000));
+      // Optional: Add a delay between batches to avoid hitting rate limits
+      await new Promise((resolve) => setTimeout(resolve, 30000)); // 30 seconds
     }
 
     return new Response("Emails sent successfully", { status: 200 });
