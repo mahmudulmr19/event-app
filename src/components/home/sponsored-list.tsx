@@ -23,7 +23,7 @@ function TitleSponsorCard() {
     <div className="rounded-2xl bg-[#151517] relative overflow-hidden py-20 md:col-span-2">
       <div className="flex flex-col text-center items-center gap-y-5 md:gap-y-10 mx-auto">
         <div className="text-2xl md:text-3xl lg:text-4xl font-medium text-gradient">
-          Platinum Sponsor
+          Million Dollar Case Study By
         </div>
         <svg
           className="w-56"
