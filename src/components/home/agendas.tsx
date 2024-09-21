@@ -83,7 +83,8 @@ export function Agendas() {
     },
     {
       time: "12:45 PM - 1:00 PM",
-      title: "Silver Sponsor: How SEO Can Rain Cash in Dropshipping",
+      title:
+        "Silver Sponsor: Unlocking the power of Global ecommerce (POD) for SEO professionals",
       speaker: "SM Belal",
       location: "Main Hall",
     },
